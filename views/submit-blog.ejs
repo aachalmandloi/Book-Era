@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blog</title>
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box;
+        }
+        
+        input[type=text], select, textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid grey;
+          border-radius: 4px;
+          box-sizing: border-box;
+          margin-top: 6px;
+          margin-bottom: 16px;
+          resize: vertical;
+        }
+        
+        input[type=submit] {
+          background-color:#6f3348;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          border: 1px solid grey;
+          height:50px;
+          width:100px;
+        }
+        input[type=file]
+        {
+          transform: scale(1.2);
+          margin-left:22px;
+        }
+        
+        input[type=submit]:hover {
+          background-color:white;
+          color:#6f3348;
+          border: 1px solid grey;
+        }
+        
+        .container {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 20px;
+        }
+        .container1{
+    width:auto;
+    margin:0 auto;
+    
+}
+.navbar
+{
+   display:flex; 
+   justify-content: space-around;
+   align-items: center;
+   padding-top:1rem;
+   margin:0;
+   
+}
+
+.logo-text {
+font-family: Arial;
+font-size: 40px;
+letter-spacing: 0px;
+word-spacing: 0px;
+color: #111526;
+font-weight: bold;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+margin-right:297px;
+}
+
+
+.nav-items
+{
+    display:flex;
+    gap:2rem;
+    padding: 0 4rem;
+    /* margin-left: 240px; */
+}
+.nav-items a{
+    cursor:pointer;
+    text-decoration: none;
+    font-size: 17px;
+    color:grey;
+    font-family: Arial;
+}
+.nav-items div:hover
+{
+    font-weight: bold;
+    color:grey;
+    transition:all 0.8s;
+}
+.logo-container
+{
+     display:flex;
+     justify-content: baseline;
+     align-items: center;
+}
+h3
+{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size:5rem;
+  user-select: none;
+  text-align: center;
+  color:#6f3348;
+  margin-bottom: 0;
+  opacity: 0.5;
+}
+
+.container label{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:1.5rem;
+  font-weight: 700;
+  color:#7a314a;
+}
+
+        </style>
+        </head>
+        <body>
+          <div class="container1">
+
+            <div class="navbar">
+
+                <div class="logo-container">
+                    <div class="logo-text">	&#160;
+                    Book-Era
+                    <img src="/images/sparkler.png" height="50px" width="50px">
+                    </div>
+                </div>
+
+                     <div class="nav-items">
+                        <div class="abc"><a href="/" onclick="fun()">Home</a><div class="line"></div></div>
+                        <div class="abc"><a href="/users/logout" onclick="fun()">Log Out</a><div class="line"></div></div>
+                        <div class="abc"><a href="/book/getuserbooks">My books</a></div>
+                        <div class="abc"><a href="#latestblogs" onclick="fun()">Explore Blogs</a><div class="line"></div></div>
+                        
+                    </div>
+            </div>
+        </div>
+        <div class="message">
+
+           
+        
+        <h3>Blog Form</h3>
+        
+        <div class="container">
+          <form action="/explore/addblog" method="post" enctype="multipart/form-data">
+           
+        
+            <label for="fname">Name</label>
+            <input type="text" id="fname" name="name" placeholder="Your name" required>
+        
+        
+            <label for="lname">Blog Name</label>
+            <input type="text" id="lname" name="blogname" placeholder="Blog Name" required>
+        
+            <label for="country">Blog Category</label>
+            <select class="bookcategory" name="category">
+              <option>Enterprenour</option>
+              <option>Business</option>
+              <option>Corporate</option>
+              <option>Placement</option>
+              <option>Preperation</option>
+         
+              
+          </select>
+           
+        
+             <label for="country">Add Image</label>
+            <br><br>
+            <input type="file" id="lname" name="image" required>
+            <br><br>
+            
+            <label for="subject">Discription ...max limit 5000 words....</label>
+            <textarea id="subject" name="discription" placeholder="Write something.."  required style="height:200px" maxlength="5000"></textarea>
+        
+            <input type="submit" value="Add Blog">
+           
+            
+          </form>
+        </div>
+        
+        </body>
+</html>

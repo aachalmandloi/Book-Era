@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <title>SignUp</title>
+
+    <style>
+        
+        
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    height: 100%;
+    width: 100%;
+}
+
+.container1{
+ 
+   height: 550px;
+   position: relative;
+   top: 3rem;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+     gap: 30px;
+     justify-content: center;
+     align-items: center;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 5%;
+
+}
+
+h1{
+    color:#6f3348;
+    line-height: 1rem;
+    font-size: 2.5rem;
+    opacity: 0.8;
+    font-family:Arial;
+   
+}
+input[type="text"]{
+  
+  padding: 10px;
+  border-radius: 2rem;
+  width: 20rem;
+  background-color:white;
+  border:1px solid black;
+}
+
+input[type="email"]{
+  
+    padding: 10px;
+    border-radius: 2rem;
+    width: 20rem;
+    background-color:white;
+    border:1px solid black;
+}
+
+input[type="password"]{
+  
+    padding: 10px;
+    border-radius: 2rem;
+    width: 20rem;
+    background-color:white;
+    border:1px solid black;
+}
+
+button{
+    width: 10rem;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    background-color:grey;
+    color:white;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color:black;
+    color:white;
+}
+
+.text p{
+    color:#444f50 ;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.text a{
+    text-decoration: none;
+    color:#6f3348;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-left: 120px;
+    opacity: 0.8;
+}
+.container{
+    width:auto;
+    margin:0 auto;
+    box-shadow: 2px 3px 10px #05FEF0;
+}
+.navbar
+{
+   display:flex; 
+   justify-content: space-between;
+   align-items: center;
+   padding-top:1rem;
+}
+.logo-text{
+    color:#0d0368;
+    font-weight:800;
+}
+.nav-items
+{
+    display:flex;
+    gap:2rem;
+    padding: 0 4rem;
+}
+.nav-items a{
+    cursor:pointer;
+    text-decoration: none;
+    font-size: 20px;
+    color:#0d0368;
+}
+.nav-items div:hover
+{
+    font-weight: bold;
+    color:#05FEF0;
+    transition:all 0.8s;
+}
+.logo
+{
+    width:80px;
+    margin-left:1.2rem;
+ }
+
+.logo-container
+{
+     display:flex;
+     justify-content: baseline;
+     align-items: center;
+}
+
+.logo-text
+{
+     margin-left:-1.2rem;
+     font-size: 40px;
+}
+
+
+.detail
+{
+    height: 100vh;
+    background-color: #ecebeb;
+}
+.alert {
+  padding: 20px;
+  background-color: #dd7871;
+  color: white;
+
+}
+.alert1 {
+  padding: 20px;
+  background-color: #4c94c8;
+  color: white;
+
+}
+
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border: 2px solid #ffffff59;
+    width: 500px;
+    scale: 0;
+    background: #00000088;
+    backdrop-filter: blur(10px);
+    color: white;
+    z-index: 1;
+    padding: 20px 25px;
+    border-radius: 20px;
+    transition: 0.5s ease-in-out;
+  }
+  .modal-header {
+    display: flex;
+    margin-bottom: 25px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ffffff88;
+  }
+
+  .modal-header h1{
+    font-size: medium;
+  }
+  .modal-header div i {
+    font-size: 30px;
+  }
+  .close {
+    cursor: pointer;
+  }
+  
+  
+  
+  .active {
+    scale: 1;
+  }
+  .overlay {
+    position: fixed;
+    background-color: #5f5f5f83;
+    top: 0;
+    opacity: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    transition: 0.5s ease-in-out;
+  }
+  .overlayactive {
+    opacity: 1;
+    pointer-events: initial;
+  }
+  .container{
+    width:auto;
+    margin:0 auto;
+    background-color: #ecebeb;
+}
+.navbar
+{
+   display:flex; 
+   justify-content: space-around;
+   align-items: center;
+   padding-top:1rem;
+}
+
+.logo-text {
+font-family: Arial;
+font-size: 40px;
+letter-spacing: 0px;
+word-spacing: 0px;
+color: #111526;
+font-weight: bold;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+margin-right:297px;
+}
+
+
+.nav-items
+{
+    display:flex;
+    gap:2rem;
+    padding: 0 4rem;
+    /* margin-left: 240px; */
+}
+.nav-items a{
+    cursor:pointer;
+    text-decoration: none;
+    font-size: 17px;
+    color:grey;
+    font-family: Arial;
+}
+.nav-items div:hover
+{
+    font-weight: bold;
+    color:grey;
+    transition:all 0.8s;
+}
+.logo-container
+{
+     display:flex;
+     justify-content: baseline;
+     align-items: center;
+}
+
+   
+    </style>
+  
+</head>
+<body>
+  <div class="main">
+    <div class="container">
+
+      <div class="navbar">
+
+          <div class="logo-container">
+              <div class="logo-text">	&#160;
+              Book-Era
+              <img src="/images/sparkler.png" height="50px" width="50px">
+              </div>
+          </div>
+
+               <div class="nav-items">
+                  <div class="abc"><a href="/" onclick="fun()">Home</a><div class="line"></div></div>
+                  <div class="abc"><a href="/users/login" onclick="fun()">Log In</a><div class="line"></div></div>
+                  <div class="abc"><a href="" onclick="fun()">Contact Us</a><div class="line"></div></div>
+                  <div class="abc"><a href="#latestblogs" onclick="fun()">Explore Blogs</a><div class="line"></div></div>
+                  
+              </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <%if(error){%>
+            <div class="modal">
+                <div class="modal-header">
+                  <h1><%=message%></h1>
+                  <div>
+                    <i onclick="closeModal()" class="fa-solid fa-xmark close"></i>
+                  </div>
+                </div>  
+            </div>
+            
+              <!-- Overlay -->
+              <div class="overlay" onclick="closeModal()"></div>
+              <script>
+                    const modal = document.querySelector(".modal");
+        const overlay = document.querySelector(".overlay");
+        
+                  modal.classList.add("active");
+                  overlay.classList.add("overlayactive");
+        
+                  const closeModal = () => {
+          modal.classList.remove("active");
+          overlay.classList.remove("overlayactive");
+        };
+              </script>
+
+            <%}%>
+
+           
+
+<div class="detail">
+    <form action="/users/signup" method="post">
+        <div class="container1">
+                <h1>Sign Up</h1>
+
+                <div class="username">
+                    <input type="text" placeholder="Enter Name" name="name" required="true">
+                </div>
+
+                <div class="useremail">
+                    <input type="email" placeholder="Enter Email-Id" name="email"  required="true">
+                </div>
+
+                <div class="userpassword">
+                    <input type="password" placeholder="Enter Password" name="password"  required="true">
+                </div>
+
+                <div class="userconfirm">
+                    <input type="password" placeholder="Confirm Password" name="confirmPassword"  required="true">
+                </div>
+
+                <div class="submitbtn">
+                    <button>Register</button>
+                </div>
+
+                <div class="text">
+                    <p>Already have an account ??</p>
+                    <br>
+                    <a href="login">Login </a>
+                </div>          
+        </div>
+      </form>
+    </div>
+    </div>
+</div>
+    
+<script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+</body>
+</html>

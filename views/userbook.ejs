@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your added books to sell/rent</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <style>
+      *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      .wrapper{
+          height: 100vh;
+          width: 100vw;
+          overflow-x: hidden;
+
+      }
+      /* Explanation in JS tab */
+
+/* Cool font from Google Fonts! */
+@import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
+
+body {
+margin: 0px;
+}
+
+#container2 {
+/* Center the text in the viewport. */
+position: absolute;
+margin: auto;
+width: 100vw;
+height: 80pt;
+top: 0;
+bottom: 0;
+
+/* This filter is a lot of the magic, try commenting it out to see how the morphing works! */
+filter: url(#threshold) blur(0.6px);
+}
+
+/* Your average text styling */
+#text1, #text2 {
+position: absolute;
+width: 100%;
+display: inline-block;
+
+font-family: 'Raleway', sans-serif;
+font-size: 80pt;
+
+text-align: center;
+
+user-select: none;
+}
+      .container{
+          display: flex;
+          flex-direction: column;
+
+      }
+
+      .btn-div{
+          display: flex;
+          /* flex-wrap: wrap;  */
+          gap: 2rem;
+      
+          padding: 1rem 1rem 1rem 1rem;
+        margin: 2rem 2rem 2rem 2rem;
+         margin-top: 2rem;
+         /* //width: 1000px; */
+       
+
+
+      }
+
+      a button{
+          padding: 1rem;
+          background-color: rgb(77,77,77);
+          color: white;
+          border-radius: 1rem;
+          font-weight: bolder;
+          transition: all 1s ease;
+      }
+
+      a button:hover{
+          transform: scale(1.1);
+          
+      }
+
+      a :hover{
+          cursor: pointer;
+      }
+    
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+body {
+line-height: 1;
+}
+ol, ul {
+list-style: none;
+}
+blockquote, q {
+quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+/* ---------------------------------------------------------- Main css -------------------------------------------------------------*/
+
+/* ------------------------------------------------- for mobiles -------------------------------------------------------------------- */
+@media(max-width: 900px){
+
+
+
+  /* ------------------------- main book store ---------------------------- */
+  main{
+      margin-top: 1em;
+      font-family: 'Noto Sans JP', sans-serif;
+  }
+  .books{
+      display: flex;
+      flex-direction: row;
+      background-color: #cbb5e2;
+      border-radius: 10px;
+      margin-bottom: 3em;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  }
+  .books:nth-of-type(2){
+      background-color: #fbadaf;
+  }
+  .books:nth-of-type(3){
+      background-color: #a4e0eb;
+  }
+  .books:nth-of-type(4){
+      background-color: #fdca95;
+  }
+  .book-img{
+      width: 100%;
+      max-width: 1000px;
+      margin: 1.5em;
+      border-radius: 3px;
+      transition: transform 1s;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+  .book-img:hover{
+      transform: scale(1.05);
+  }
+  .descp{
+      margin: 1.5em;
+      padding: 1em;
+      
+  }
+  .book-name{
+      font-weight: bold;
+      padding-bottom: 0.5em;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+      color: white;
+  }
+  .author{
+      padding-bottom: 0.5em;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+      color: white;
+  }
+  .rating{
+      padding-bottom: 1.2em;
+      font-size: 1em;
+      letter-spacing: 1px;
+      color: white;
+  }
+  .info{
+      font-size: 1em;
+      letter-spacing: 1px;
+      color: white;
+  }
+  .descp button{
+      margin-top: 1em;
+      background: none;
+      border: none;
+      color: #cbb5e2;
+      background-color: white;
+      padding: 0.6em 1.5em;
+      font-size: 1em;
+      border-radius: 20px;
+      font-weight: bolder;
+  }
+  .descp button:hover{
+      color: #a790f2;
+  }
+  #b1{
+      color: #fbadaf;
+  }
+  #b1:hover{
+      color: #ff6e9f;
+  }
+  #b2{
+      color: #a4e0eb;
+  }
+  #b2:hover{
+      color: #62cdec;
+  }
+  #b3{
+      color: #fdca95;
+  }
+  #b3:hover{
+      color: #fb9124;
+  }
+
+}
+
+
+
+
+
+
+/*--------------------------------------------------------------- fOR PC AND LAPTOPS -------------------------------------------- */
+@media(min-width: 900px){
+  /* ----------------------------------------------------- Navbar ---------------------------------------------------------- */
+  .nav-bar{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  .nav1{
+      display: flex;
+      flex-direction: row;
+      margin-left: 1em;
+      margin-bottom: 1em;
+      margin-top: 1em;
+  }
+  .nav1 a{
+      padding: 1em;
+      border: none;
+      border-right: 1px solid #adb5bd;
+      color: #adb5bd;
+      font-size: 1em;
+      text-decoration: none;
+  }
+  .nav1 input{
+      border: none;
+      margin-left: 0.5em;
+      padding: 0.8em 1em;
+      font-size: 1em;
+  }
+  .nav1 input::placeholder{
+      font-family: 'Roboto', sans-serif;
+      color: #adb5bd;
+      font-size: 1em;
+  }
+  input:focus, textarea:focus, select:focus{
+      outline: none;
+  }
+  .nav-bar h3{
+      padding: 0.8em 1em;
+      margin-left: 1em;
+      margin-bottom: 1em;
+      margin-top: 1em;
+      font-size: 1em;
+      font-weight: bold;
+  }
+  .icon-about{
+      display: flex;
+      align-items: center;
+  }
+  .material-icons-outlined{
+      color: #adb5bd;
+      size: 2px;
+      margin-right: 1em;
+  
+  }
+  .icon-about a{
+      margin-right: 2em;
+      text-decoration: none;
+      color: #adb5bd;
+      font-size: 1em;
+      border-left: 1px solid #adb5bd;
+      padding-left: 1em;
+  }
+
+  /* ------------------- MAIN BOOKS ---------------------------------- */
+  main{
+      margin-top: 1em;
+      font-family: 'Noto Sans JP', sans-serif;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+  }
+  .books{
+      display: flex;
+      flex-direction: row;
+    
+      max-width: 400px;
+      
+      justify-content: space-evenly;
+      background-color: #cbb5e2;
+      border-radius: 10px;
+      margin-bottom: 3em;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    
+  }
+  .books:nth-of-type(2){
+      background-color: #fbadaf;
+  }
+  .books:nth-of-type(3){
+      background-color: #a4e0eb;
+  }
+  .books:nth-of-type(4){
+      background-color: #fdca95;
+  }
+  .img{
+    height: 200px;
+    width: 150px;
+    position: relative;
+  }
+  .book-img{
+      
+      width: 150px;
+      height: 200px;
+
+      border-radius: 3px;
+      transition: transform 1s;
+      margin: 1.5em;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  }
+  .book-img:hover{
+      transform: scale(1.05);
+  }
+  .descp{
+      margin: 1.5em;
+      padding: 1em;
+      
+  }
+  .book-name{
+      font-weight: bold;
+      padding-bottom: 0.5em;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+      color: white;
+  }
+  .author{
+      padding-bottom: 0.5em;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+      color: white;
+  }
+  .rating{
+      padding-bottom: 1.2em;
+      font-size: 1em;
+      letter-spacing: 1px;
+      color: white;
+  }
+  .info{
+      font-size: 1em;
+      letter-spacing: 1px;
+      color: white;
+  }
+  .descp button{
+      margin-top: 1em;
+      background: none;
+      border: none;
+      color: #cbb5e2;
+      background-color: white;
+      padding: 0.6em 1.5em;
+      font-size: 1em;
+      border-radius: 20px;
+      font-weight: bolder;
+  }
+  .descp button:hover{
+      color: #a790f2;
+  }
+  #b1{
+      color: #fbadaf;
+  }
+  #b1:hover{
+      color: #ff6e9f;
+  }
+  #b2{
+      color: #a4e0eb;
+  }
+  #b2:hover{
+      color: #62cdec;
+  }
+  #b3{
+      color: #fdca95;
+  }
+  #b3:hover{
+      color: #fb9124;
+  }
+
+
+  
+
+}
+.twelve p {
+  position: relative;
+  padding: 0;
+  margin-top: 10px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.twelve p {
+  font-size:26px; font-weight:700;  letter-spacing:1px; text-transform:uppercase; width:160px; text-align:center; margin:auto; white-space:nowrap; padding-bottom:13px;
+}
+.twelve p:before {
+    background-color: #c50000;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 5px;
+}
+.twelve p:after {
+    background-color: #c50000;
+    content: '';
+    display: block;
+  position:absolute; right:0; bottom:0;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 0.25em;
+}
+
+.book-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem;
+}
+
+.not-found{
+
+background-color:  #151719;
+display: flex;
+justify-content: center;
+align-items: center;
+
+width: 600px;
+margin-left: 300px;
+
+
+}
+
+.waviy {
+position: relative;
+-webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+font-size: 60px;
+padding: 20px;
+}
+.waviy span {
+font-family: 'Alfa Slab One', cursive;
+position: relative;
+display: inline-block;
+color: #fff;
+text-transform: uppercase;
+animation: waviy 1s infinite;
+animation-delay: calc(.1s * var(--i));
+
+}
+@keyframes waviy {
+0%,40%,100% {
+  transform: translateY(0)
+}
+20% {
+  transform: translateY(-20px)
+}
+}
+
+
+
+#find{
+ background-color: gainsboro;
+ color:black;
+  border-radius: 1rem;
+  font-weight: bolder;
+  width: 400px;
+  height: 50px;
+  margin-top:1rem ;
+  cursor: text;
+
+ 
+}
+
+.text
+{
+position: absolute;
+top: 30%;
+bottom: 50%;
+
+transform: rotate(45deg);
+left: 100%;
+font-size: 30px;
+ color: red;
+
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border: 2px solid #ffffff59;
+  width: 500px;
+  scale: 0;
+  background: #00000088;
+  backdrop-filter: blur(10px);
+  color: white;
+  z-index: 1;
+  padding: 20px 25px;
+  border-radius: 20px;
+  transition: 0.5s ease-in-out;
+}
+.modal-header {
+  display: flex;
+  margin-bottom: 25px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ffffff88;
+}
+.modal-header h1{
+  font-size: large;
+}
+.modal-header div i {
+  font-size: 30px;
+}
+.close {
+  cursor: pointer;
+}
+.icon-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.icon {
+  border: 1px solid #ffffff88;
+  padding: 17px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+  gap: 10px;
+  justify-content: center;
+  transition: all 0.5s;
+  margin-bottom: 25px;
+  text-decoration: none;
+}
+.icon i {
+  font-size: 27px;
+}
+
+#facebook {
+  color: #1771e6;
+  border: 1px solid #1771e6;
+}
+#facebook:hover {
+  background-color: #1771e6;
+  color: #fff;
+}
+
+#twitter {
+  color: #1c99e6;
+  border: 1px solid #1c99e6;
+}
+#twitter:hover {
+  background-color: #1c99e6;
+  color: #fff;
+}
+
+#instagram {
+  color: #cb2770;
+  border: 1px solid #cb2770;
+}
+#instagram:hover {
+  background-color: #cb2770;
+  color: #fff;
+}
+
+#whatsapp {
+  color: #2fe664;
+  border: 1px solid #2fe664;
+}
+#whatsapp:hover {
+  background-color: #2fe664;
+  color: #fff;
+}
+
+#telegram {
+  color: #0081c2;
+  border: 1px solid #0081c2;
+}
+#telegram:hover {
+  background-color: #0081c2;
+  color: #fff;
+}
+
+.active {
+  scale: 1;
+}
+.overlay {
+  position: fixed;
+  background-color: #5f5f5f83;
+  top: 0;
+  opacity: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  transition: 0.5s ease-in-out;
+}
+.overlayactive {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.icons{
+  display: flex;
+  gap: 2px;
+  
+}
+.icons img{
+  width: 70px;
+  height: 70px;
+}
+.para{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 30px;
+  font: bolder;
+}
+      
+  .container1{
+    width:auto;
+    margin:0 auto;
+}
+.navbar
+{
+   display:flex; 
+   justify-content: space-around;
+   align-items: center;
+   padding-top:1rem;
+}
+
+.logo-text {
+font-family: Arial;
+font-size: 40px;
+letter-spacing: 0px;
+word-spacing: 0px;
+color: #111526;
+font-weight: bold;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+margin-right:297px;
+}
+
+.nav-items
+{
+    display:flex;
+    gap:2rem;
+    padding: 0 4rem;
+    /* margin-left: 240px; */
+}
+.nav-items a{
+    cursor:pointer;
+    text-decoration: none;
+    font-size: 17px;
+    color:grey;
+    font-family: Arial;
+}
+.nav-items div:hover
+{
+    font-weight: bold;
+    color:grey;
+    transition:all 0.8s;
+}
+.logo-container
+{
+     display:flex;
+     justify-content: baseline;
+     align-items: center;
+}
+   
+        
+  </style>
+</head>
+<body>
+   
+    <div class="wrapper">
+      <div class="container1">
+
+        <div class="navbar">
+
+            <div class="logo-container">
+                <div class="logo-text">	&#160;
+                Book-Era
+                <img src="/images/sparkler.png" height="50px" width="50px">
+                </div>
+            </div>
+
+                 <div class="nav-items">
+                    <div class="abc"><a href="/" onclick="fun()">Home</a><div class="line"></div></div>
+                    <div class="abc"><a href="/users/logout" onclick="fun()">Log Out</a><div class="line"></div></div>
+                    <div class="abc"><a href="" onclick="fun()">Contact Us</a><div class="line"></div></div>
+                    <div class="abc"><a href="#latestblogs" onclick="fun()">Explore Blogs</a><div class="line"></div></div>
+                    
+                </div>
+        </div>
+    </div>
+
+      <div class="twelve">
+        <p>Your Added Books</p>
+      </div>
+
+
+       <div class="book-container">
+        <%if(book!='' && msg!='') { %>
+          <% book.forEach(function(book, index){ %>
+
+            <div class="modal">
+              <div class="modal-header">
+                <h1><%=msg%></h1>
+                <div>
+                  <i onclick="closeModal()" class="fa-solid fa-xmark close"></i>
+                </div>
+              </div>
+          
+          
+              <div>
+          
+                <h3></h3>
+          
+                
+                <div class="icon-container">
+                  <a href="#" class="icon" id="facebook">
+                    <i class="fa fa-certificate"></i>
+                  </a>
+                  <a href="#" class="icon" id="twitter">
+                    <i class="fa fa-certificate"></i>
+                  </a>
+                  <a href="#" class="icon" id="instagram">
+                    <i class="fa fa-certificate"></i>
+                  </a>
+                  <a href="#" class="icon" id="whatsapp">
+                    <i class="fa fa-certificate"></i>
+                  </a>
+                  <a href="#" class="icon" id="telegram">
+                    <i class="fa fa-certificate"></i>
+                  </a>
+                </div>
+              </div>
+          
+          
+            </div>
+          
+            <!-- Overlay -->
+            <div class="overlay" onclick="closeModal()"></div>
+
+            <script>
+              const modal = document.querySelector(".modal");
+      const overlay = document.querySelector(".overlay");
+      
+                modal.classList.add("active");
+                overlay.classList.add("overlayactive");
+      
+                const closeModal = () => {
+        modal.classList.remove("active");
+        overlay.classList.remove("overlayactive");
+      };
+                </script>
+            <div class="books">
+
+                  
+              <div class="img">
+                  <img src="/bookimages/<%=book.bookimage%>" class="book-img">
+              </div>
+              <div class="descp">
+                  <h2 class="book-name"><%= book.bookname %></h2>
+                  <h3 class="author">Author:- <%= book.authorname %></h3>
+                  <h3 class="rating"> EDITION YEAR:-   <%= book.year %></h3>
+                  <p class="info">
+                    ₹  <%= book.price %>
+                    <%if(book.sell){%>
+       
+                     FOR SELL
+                     <%}%>
+         
+         
+                     <%if(book.rent){%>
+                    
+                       ON RENT
+                        <%}%>
+                  </p>
+                  <a href="/book/delete/<%= book._id %>" ><button id="b2">Remove the Book</button></a>  
+                   
+              </div>
+          </div>
+    
+          <% })%>
+         <%  }else{%>
+          <div class="modal">
+            <div class="modal-header">
+              <h1>No books added by you!!</h1>
+              <div>
+                <a href="/"><i  class="fa-solid fa-xmark close"></i></a>
+              </div>
+            </div>
+        
+        
+            <div>
+        
+              <h3></h3>
+        
+              
+              <div class="icon-container">
+                <a href="#" class="icon" id="facebook">
+                  <i class="fa fa-certificate"></i>
+                </a>
+                <a href="#" class="icon" id="twitter">
+                  <i class="fa fa-certificate"></i>
+                </a>
+                <a href="#" class="icon" id="instagram">
+                  <i class="fa fa-certificate"></i>
+                </a>
+                <a href="#" class="icon" id="whatsapp">
+                  <i class="fa fa-certificate"></i>
+                </a>
+                <a href="#" class="icon" id="telegram">
+                  <i class="fa fa-certificate"></i>
+                </a>
+              </div>
+            </div>
+        
+        
+          </div>
+        
+          <!-- Overlay -->
+          <div class="overlay" onclick="closeModall()"></div>
+    
+          <script>
+            const modall = document.querySelector(".modal");
+    const overlayy = document.querySelector(".overlay");
+    
+              modall.classList.add("active");
+              overlayy.classList.add("overlayactive");
+    
+              const closeModall = () => {
+      modall.classList.remove("active");
+      overlayy.classList.remove("overlayactive");
+    };
+              </script>
+          <%}%>
+          
+
+       </div>
+
+    
+</div>
+         
+
+  <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

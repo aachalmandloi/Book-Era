@@ -1,0 +1,32 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Search Results</h1>
+
+<div>
+  <% if(book != '') { %>
+    <% book.forEach(function(book, index){ %>
+    <a href="/bookimages/<%= book._id %>">
+      <div>
+        <img src="/bookimages/<%= book.bookimage %>"  loading="lazy">
+      </div>
+      <div><%= book.name %></div>
+    </a>
+    <% }) %>
+  <% } else { %>
+    <p>No items found.</p>
+  <% } %>
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Blogs</title>
+
+    <style>
+
+*{
+    margin :0;
+    padding: 0;
+  box-sizing:border-box ;  
+}
+
+ .wrapper{
+          overflow-x: hidden;
+          overflow-y: auto;
+          height: 100vh;
+
+
+}
+
+ 
+.container{
+
+   max-width: 1200px;
+    height:100%;
+    margin: 0 auto;
+    padding: 20px;
+
+  
+}
+ .container h1{
+   
+  text-align: center;
+ margin: 20px 0;
+  font-size: 3rem;
+  
+
+   
+}
+.limit-blog{
+  max-width: 1200px;
+margin: 0 auto;
+display: flex;
+flex-wrap:wrap;
+margin-top: 4rem; 
+
+ gap: 20px;
+
+}
+
+.card{
+  width: 300px;
+ height: 300px;
+ position: relative;
+ margin-bottom: 20px;
+ border-radius:10px;
+ overflow: hidden;
+ margin: 30px;
+ 
+ border-bottom: 3px black;
+ 
+
+}
+
+.card img{
+
+  width: 100%;
+  filter: grayscale(100%);
+  box-shadow: 0 0 20px #333;
+
+}
+
+.card:hover{
+
+  transform: scale(1.05);
+  transition: 0.5s;
+  filter: drop-shadow(1px 1px 8px black);
+
+
+}
+.card:hover img{
+
+  filter: grayscale(0%);
+}
+
+.card figcaption{
+
+  position: absolute;
+   bottom: 0;
+   left: 0;
+   padding: 25px;
+   width: 100%;
+   height: 20%;
+   font-weight: 500;
+   font-size: 16px;
+   color: hsl(208, 76%, 47%);
+     opacity:0;
+     transition :0.5s;
+
+}
+.card:hover figcaption{
+
+  opacity: 1;
+  transform: scale(1.03);
+}
+.container1{
+    width:auto;
+    margin:0 auto;
+}
+.navbar
+{
+   display:flex; 
+   justify-content: space-around;
+   align-items: center;
+   padding-top:1rem;
+}
+
+.logo-text {
+font-family: Arial;
+font-size: 40px;
+letter-spacing: 0px;
+word-spacing: 0px;
+color: #111526;
+font-weight: bold;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+margin-right:297px;
+}
+
+.nav-items
+{
+    display:flex;
+    gap:2rem;
+    padding: 0 4rem;
+    /* margin-left: 240px; */
+}
+.nav-items a{
+    cursor:pointer;
+    text-decoration: none;
+    font-size: 17px;
+    color:grey;
+    font-family: Arial;
+}
+.nav-items div:hover
+{
+    font-weight: bold;
+    color:grey;
+    transition:all 0.8s;
+}
+.logo-container
+{
+     display:flex;
+     justify-content: baseline;
+     align-items: center;
+}
+
+.twelve p {
+  position: relative;
+  padding: 0;
+  margin-top: 10px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.twelve p {
+  font-size:26px; font-weight:700;  letter-spacing:1px; text-transform:uppercase; width:160px; text-align:center; margin:auto; white-space:nowrap; padding-bottom:13px;
+}
+.twelve p:before {
+    background-color: #c50000;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 5px;
+}
+.twelve p:after {
+    background-color: #c50000;
+    content: '';
+    display: block;
+  position:absolute; right:0; bottom:0;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 0.25em;
+}
+
+   
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+      <div class="container1">
+
+        <div class="navbar">
+
+            <div class="logo-container">
+                <div class="logo-text">	&#160;
+                Book-Era
+                <img src="/images/sparkler.png" height="50px" width="50px">
+                </div>
+            </div>
+
+                 <div class="nav-items">
+                    <div class="abc"><a href="/" onclick="fun()">Home</a><div class="line"></div></div>
+                    <div class="abc"><a href="/users/logout" onclick="fun()">Log Out</a><div class="line"></div></div>
+                    <div class="abc"><a href="/book/getuserbooks">My books</a></div>
+                    <div class="abc"><a href="#latestblogs" onclick="fun()">Explore Blogs</a><div class="line"></div></div>
+                    
+                </div>
+        </div>
+    </div>
+
+          <div class="container">
+            <div class="twelve">
+              <p>All Blogs</p>
+            </div>
+            <div class="limit-blog">
+              <% if(blog != '') { %>
+                <% blog.forEach(function(blog, index){ %>
+                <a href="/explore/blogs/<%= blog._id %>">
+                  <div class="card">
+                    <img src="/blogimages/<%= blog.image %>" alt="<%= blog.name %>" loading="lazy">
+                    <figcaption><%= blog.blogname %></figcaption>
+                  </div>
+                 
+                </a>
+                <% }) %>
+              <% } else { %>
+                <p class="name">No Blogs found.</p>
+              <% } %> 
+      </div>
+          </div>
+     
+</body>
+</html>

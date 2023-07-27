@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Book-Era</title>
+    <!-- <link rel="stylesheet" href="home.css"> -->
+    <style>
+        #wrapper
+{
+    height:100vh;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+/* body
+{
+    background-image: radial-gradient(circle, #0d0368, #004d99, #0086ae, #85bcc1, #e8eeec);
+   
+} */
+*
+{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    scroll-behavior: smooth;
+}
+/* navbarrrrrrrrr */
+.container{
+    width:auto;
+    margin:0 auto;
+}
+.navbar
+{
+   display:flex; 
+   justify-content: space-around;
+   align-items: center;
+   padding-top:1rem;
+   background-color: #6f3348;
+}
+
+.logo-text {
+font-family: Arial;
+font-size: 40px;
+letter-spacing: 0px;
+word-spacing: 0px;
+color: #ecebeb;
+font-weight: bold;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+margin-right:297px;
+}
+
+
+.nav-items
+{
+    display:flex;
+    gap:2rem;
+    padding: 0 4rem;
+    /* margin-left: 240px; */
+}
+.nav-items a{
+    cursor:pointer;
+    text-decoration: none;
+    font-size: 17px;
+    /* color:grey; */
+    color: #ecebeb;
+    font-family: Arial;
+}
+.nav-items div:hover
+{
+    /* font-weight: bold; */
+    /* color:grey; */
+    /* transition:all 0.8s;
+    color: #ecebeb; */
+    background-color: white;
+    color:#6f3348;
+    
+}
+.logo-container
+{
+     display:flex;
+     justify-content: baseline;
+     align-items: center;
+}
+
+
+
+.hero-section{
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    font-family: Arial;
+    gap:20rem;
+    top:5rem;
+   
+}
+.hero-img-section
+{
+
+    position:relative;
+    left:200px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+}
+.hero-img-section .img
+{
+    position:absolute;
+} 
+.hero-btn-section
+{
+    /* position: absolute; */
+  display:flex;
+  flex-direction: column;
+  gap: 35px;
+  /* background-image: radial-gradient(circle, #0d0368, #004d99, #0086ae, #85bcc1, #e8eeec); */
+}
+.btn
+{
+    background-color:#ecebeb;
+    width: fit-content;
+    color: black;
+    padding: 0.8rem 2.3rem;
+    /* box-shadow: 5px 5px 7px 0px #0000003f; */
+    font-size: 18px;
+    cursor: pointer;
+    transition:all 0.5s;
+    font-weight: 500;
+    border: solid 1px black;
+    position: relative;
+    z-index: 1;
+    border-radius: 20px;
+    font-family: Arial;
+}
+.btn a{
+    color:black;
+}
+.btn a::before
+{
+    color:white;
+}
+ .btn::before {
+    content: "";
+    position: absolute;
+    background-color: #6f3348;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.8s;
+    border-radius: 20px;
+    color:#ecebeb;
+  }
+  .btn:hover::before {
+    transform: scaleX(1);
+  }
+  .btn:hover {
+    transition: all 0.8s;
+    border: solid 1px grey;
+    color: white;
+  } 
+  .hero-section-heading
+{
+    position:relative;
+    top:5rem;
+    left:10rem;
+    font-size:35px;
+    color:grey;
+    font-weight:bolder;
+    font-family: Arial;
+}
+
+.role{
+    color:#6f3348;
+    font-weight:800;
+}
+.hero-section-sub-heading{
+    font-size:45px;
+    line-height: 45px;
+}
+a{
+    transition: all 0.8s;
+    text-decoration: none;
+}
+
+#latestblogs{
+    background-color:white;
+   margin-top: 6rem;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: 3rem;
+}
+
+.text-btn{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+
+
+}
+
+.faded-text{
+    user-select: none;
+    font-size: 5rem;
+    font-weight:bold;
+    font-family: Arial;
+    color:gray;
+bottom: -16%;
+  left: -15%;
+  /* margin-right: 1010px; */
+  
+  transition: all 3s; 
+}
+
+.viewall{
+    color: burlywood;
+    font-size: 3rem;
+
+}
+ 
+
+   
+.limit-blog{
+   
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+flex-wrap:wrap;
+margin-top: 4rem; 
+
+ gap: 20px;
+
+}
+
+.card{
+
+ width: 300px;
+ height: 300px;
+ position: relative;
+ margin-bottom: 20px;
+ border-radius:10px;
+ overflow: hidden;
+ margin: 30px;
+ 
+ border-bottom: 3px black;
+ 
+}
+
+.card img{
+
+width: 100%;
+
+filter: grayscale(100%);
+box-shadow: 0 0 20px #333;
+
+}
+
+.card:hover{
+
+transform: scale(1.05);
+transition: 0.5s;
+filter: drop-shadow(1px 1px 8px black);
+
+
+}
+.card:hover img{
+
+filter: grayscale(0%);
+}
+
+.name{
+    font-size: 2rem;
+    font-weight: 600;
+   color: grey;
+    opacity: 3;
+
+}
+
+
+.card figcaption{
+
+position: absolute;
+ bottom: 0;
+ left: 0;
+ padding: 25px;
+ width: 100%;
+ height: 20%;
+ font-weight: 500;
+ font-size: 16px;
+ color: #333;
+   opacity:0;
+   transition :0.5s;
+
+}
+.card:hover figcaption{
+
+opacity: 1;
+transform: scale(1.03);
+}
+.limit-blog
+{
+    background-color: #ecebeb;
+    margin-top:0;
+    /* width:1000px; */
+    /* height: 1000px; */
+    /* opacity:0.5; */
+}
+.text-btn
+{
+    margin-bottom: 0;
+}
+.faded-text
+{
+    color:#6f3348;
+}
+.viewall
+{
+    margin-top:100px;
+    color:#6f3348;
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <!-- navbar -->
+        <div class="container">
+
+            <div class="navbar">
+
+                <div class="logo-container">
+                    <div class="logo-text">	&#160;
+                    Book-Era
+                    <img src="/images/sparkler.png" height="50px" width="50px">
+                    </div>
+                </div>
+
+                     <div class="nav-items">
+                        <div class="abc"><a href="/" onclick="fun()">Home</a><div class="line"></div></div>
+                        <div class="abc"><a href="/users/login" onclick="fun()">Log In</a><div class="line"></div></div>
+                        <div class="abc"><a href="" onclick="fun()">Contact Us</a><div class="line"></div></div>
+                        <div class="abc"><a href="#latestblogs" onclick="fun()">Explore Blogs</a><div class="line"></div></div>
+                        
+                    </div>
+            </div>
+        </div>
+        <br><br>
+        <div class=" hero-section-heading hero-section-sub-heading">
+            A place <br>where you can<br> <span class="role"></span>
+
+        </div>
+        <!-- hero section -->
+        <div class="hero-section">
+            <!-- <div class="gradient"></div> -->
+            <div class="hero-btn-section">
+                <div class="btn1"><button class="btn"><a href="/book/purchase">PURCHASE BOOKS</a> </button></div>
+                <div class="btn2"><button class="btn"><a href="/book/add">SELL/RENT BOOKS</a> </button></div>
+                <div class="btn3"><button class="btn"><a href="/explore/addblog">WRITE BLOG</a> </button></div>
+            </div>
+            <div class="hero-img-section">
+                <div class="img4"><img src="/images/3630156.jpg" height="600px" width="500px"></div>
+            </div>
+        </div>
+
+        <div id="latestblogs">
+         
+              <div class="text-btn">
+                <h2 class="faded-text">Latest Blogs</h2>
+              </div>
+
+              <div class="limit-blog">
+                <% if(blog != '') { %>
+                    <% blog.latest.forEach(function(blog, index){ %>
+                    <a href="/explore/blogs/<%= blog._id %>" >
+                      <div class="card">
+                        <img src="/blogimages/<%= blog.image %>" alt="<%= blog.blogname %>" loading="lazy">
+                        <figcaption><%= blog.blogname %></figcaption>
+                      </div>
+                      <!-- <div class="name"><%= blog.blogname %></div> -->
+                    
+                    </a>
+                    <% }) %>
+                  <% } else { %>
+                    <p class="name">No items found.</p>
+                  <% } %>
+                  <a href="/explore/blogs" class="viewall">View All Blogs<i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+        </div>        
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous">
+        </script>
+    <script>
+        var typeData=new Typed(".role",{strings:["Sell books","Purchase Books","Write blogs"],loop:true, typeSpeed: 100, backSpeed:80, backDelay: 1000,});
+
+        function fun()
+            {
+                let content=document.getelementsByClassName(".line");
+                content.style.boxShadow="1px 1px 1px 1px #6f3348";
+            }
+        </script>
+        
+</body>
+</html>
